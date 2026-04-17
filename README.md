@@ -1,16 +1,16 @@
-# Playwright Agents — Example Test Workflow
+# 🎯 Playwright Agents — Example Test Workflow
 
 This repository demonstrates how a Playwright agent workflow works using a login page example.
 
-- Example under test: `https://practicetestautomation.com/practice-test-login/`
-- Example test file: `tests/login.spec.ts`
-- Example plan file: `specs/login-page-test-plan.md`
+- ✅ Example under test: `https://practicetestautomation.com/practice-test-login/`
+- 📁 Example test file: `tests/login.spec.ts`
+- 📝 Example plan file: `specs/login-page-test-plan.md`
 
-The login test is provided as a sample scenario. The same workflow can be applied to other pages and applications by updating the test plan and test file.
+> The login test is provided as a sample scenario. The same workflow can be applied to any other page or app by updating the test plan and test file.
 
 This project is built so a beginner can install dependencies, run the test suite, generate an HTML report, and understand how a Playwright-based test workflow is structured.
 
-## Project Structure
+## 🧭 Project Structure
 
 ```
 .
@@ -50,7 +50,24 @@ npm install
 npx playwright install
 ```
 
-## Run All Tests
+## 🧩 Install Playwright Agents in VS Code
+
+To use Playwright Agents in Visual Studio Code:
+
+1. Open VS Code in the project folder.
+2. Open the Extensions view (`Ctrl+Shift+X`).
+3. Search for `Playwright` or `Playwright Test`.
+4. Install the `Playwright for VS Code` extension.
+5. Reload VS Code if prompted.
+6. In the VS Code terminal, run the agents init command:
+
+```bash
+npx playwright init-agents --loop=vscode
+```
+
+7. Open the `tests/` folder and run tests from the Playwright sidebar or terminal.
+
+## ▶️ Run All Tests
 
 To run the full Playwright test suite in `tests/login.spec.ts`:
 
@@ -64,18 +81,18 @@ Or using npm script:
 npm test -- tests/login.spec.ts
 ```
 
-## How Playwright Agents Work
+## 🤖 How Playwright Agents Work
 
-Playwright agents follow a workflow:
+Playwright agents follow a simple workflow:
 
-1. Plan the test scenario and expected outcomes.
-2. Generate or update the Playwright test file using the plan.
-3. Run the test file against the target application.
-4. Review failures and heal tests by updating selectors, assertions, or steps.
+1. 📝 Plan the test scenario and expected outcomes.
+2. 🧩 Generate or update the Playwright test file using the plan.
+3. ▶️ Run the test file against the target application.
+4. 🔧 Review failures and heal tests by updating selectors, assertions, or steps.
 
-This repository uses the login test as an example. You can apply the same approach to any web page by changing the plan and the test file.
+> This repository uses the login test as an example. You can apply the same approach to any web page by changing the plan and the test file.
 
-## Run a Single Test Case
+## ▶️ Run a Single Test Case
 
 Use the `-g` option with the test title if you want to run one specific case. For example, test case 3:
 
@@ -101,7 +118,7 @@ The report folder will be created at:
 
 - `playwright-report/`
 
-## Planning Tests
+## 🧠 Planning Tests
 
 A good test workflow starts with a plan. Use `specs/login-page-test-plan.md` as an example.
 
@@ -112,12 +129,15 @@ A good test workflow starts with a plan. Use `specs/login-page-test-plan.md` as 
 
 Example planning steps:
 
-- Determine the page URL and valid credentials.
-- Define the elements to verify (`Username`, `Password`, `Submit`, error text).
+- ✅ Determine the page URL and valid credentials.
+- 🧷 Define the elements to verify (`Username`, `Password`, `Submit`, error text).
+- 🧪 Decide what success looks like for each case.
+- ✍️ Keep the plan readable so anyone can follow it later.
+
 - Add cases for valid login, invalid inputs, and UI visibility.
 - Track the expected result for each case.
 
-## Generating Tests
+## 🧱 Generating Tests
 
 Once the plan is ready, create test files under `tests/`.
 
@@ -148,22 +168,22 @@ After creating a new file, run it with:
 npx playwright test tests/my-new-tests.spec.ts
 ```
 
-## Healing Tests
+## 🩹 Healing Tests
 
 When a test fails, follow these steps to heal it:
 
-1. Read the Playwright failure message carefully.
-2. Open the HTML report with `npx playwright show-report` to see the failing step.
-3. Check whether the selector changed or the page content was updated.
-4. Update the selector, assertion text, or test flow accordingly.
-5. Re-run the affected test only.
+1. 🧐 Read the Playwright failure message carefully.
+2. 🔎 Open the HTML report with `npx playwright show-report` to see the failing step.
+3. 🧩 Check whether the selector changed or the page content was updated.
+4. 🛠 Update the selector, assertion text, or test flow accordingly.
+5. ▶️ Re-run the affected test only.
 
 Common healing actions:
 
-- Replace a broken selector with a more stable one.
-- Change `expect(page.locator(...)).toHaveText(...)` to match the new text.
-- Add a check for a new element if the UI structure changed.
-- Split a long test into smaller steps if it becomes brittle.
+- 🔄 Replace a broken selector with a more stable one.
+- 📝 Change `expect(page.locator(...)).toHaveText(...)` to match the new text.
+- ➕ Add a check for a new element if the UI structure changed.
+- ✂️ Split a long test into smaller steps if it becomes brittle.
 
 ## What is included
 
